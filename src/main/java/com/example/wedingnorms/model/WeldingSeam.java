@@ -1,4 +1,4 @@
-package com.example.wedingnorms;
+package com.example.wedingnorms.model;
 
 import com.example.wedingnorms.enums.SeamsGOSTs;
 import com.example.wedingnorms.enums.SeamsType;
