@@ -1,7 +1,7 @@
 package com.example.wedingnorms.model;
 
 import com.example.wedingnorms.enums.SeamsGOSTs;
-import com.example.wedingnorms.enums.SeamsType;
+import com.example.wedingnorms.enums.SeamsNumber;
 import com.example.wedingnorms.enums.WeldingPosition;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,10 +19,7 @@ public class WeldingSeam {
     private int id;
 
     @Column(name = "Тип шва", nullable = false)
-    private SeamsType seamType;
-
-    @Column(name = "Номер шва", nullable = false)
-    private String seamsNumber;
+    private SeamsNumber seamType;
 
     @Column(name = "ГОСТ", nullable = false)
     private SeamsGOSTs gost;
