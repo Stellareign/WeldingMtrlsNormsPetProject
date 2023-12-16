@@ -19,11 +19,13 @@ public class SeamServiceImpl implements SeamService {
         return dtoFactory.fromWeldingSeamToSeamDTO(seamRepository.save(weldingSeam));
     }
 
-    public int calculateFlowRate (int think) {
+    public int calculateFlowRate (int detailsThink) {
         int seamCrossSectionalAreaButtWeld =
     }
 
-    public int calculateseamCrossSectionalArea
+    public int calculateSeamCrossSectionalArea (int detailsThink){
+
+    }
 
 
 }
