@@ -15,7 +15,7 @@ public class SeamServiceImpl implements SeamService {
     private final DtoFactory dtoFactory;
 
     public SeamDTO addSeamToDB(SeamsGOSTs gost, SeamsNumber seamsNumber, int think) {
-        WeldingSeam weldingSeam = new WeldingSeam(gost, seamsNumber, think);
+        WeldingSeam weldingSeam = new WeldingSeam(gost, seamsNumber);
         return dtoFactory.fromWeldingSeamToSeamDTO(seamRepository.save(weldingSeam));
     }
 

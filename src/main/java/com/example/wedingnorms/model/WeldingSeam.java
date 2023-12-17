@@ -8,16 +8,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.*;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class WeldingSeam {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @Column(name = "ГОСТ", nullable = false)
-    @Enumerated(EnumType.STRING) // для сохранения названия, а не цифры
+    @Enumerated(EnumType.STRING) // для сохранения в базе названия, а не цифры
     private SeamsGOSTs gost;
 
     @Column(name = "Тип шва", nullable = false)
@@ -27,18 +30,13 @@ public class WeldingSeam {
     @Enumerated(EnumType.STRING) // для сохранения названия, а не цифры
     private WeldingPosition position;
 
-    @Column(name = "Толщина деталей, мм", nullable = false)
-    private int think;
+    @OneToMany
+    private List<MetalFlowRate> flowRate;
 
-    @Column(name = "Длина шва, мм", nullable = false)
-    private int seamLength;
 
-    @Column(name = "Расход пров., кг", nullable = false)
-    private int materialConsumption;
-
-    public WeldingSeam(SeamsGOSTs gost, SeamsNumber seamType, int think) {
+    public WeldingSeam(SeamsGOSTs gost, SeamsNumber seamType) {
         this.seamType = seamType;
         this.gost = gost;
-        this.think = think;
+
     }
 }
