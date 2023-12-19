@@ -12,25 +12,25 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class GasFlowRate {
+public class ElectrodeFlowRate {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String seamName;
 
     private int think1;
 
     private int think2;
 
-    private int gasFlowRate;
+    private int electrodeFlowRate;
 
     @Override
     public String toString() {
-        return "Расход газа на шов " +
+        return "Расход электродов на шов " +
                 " s" + think1 +
                 "/S" + think2 +
-                " = " + gasFlowRate + " баллонов";
+                " = " + electrodeFlowRate + "kg";
     }
 }
