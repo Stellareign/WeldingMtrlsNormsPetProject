@@ -20,17 +20,17 @@ public class GasFlowRate {
 
     private String seamName;
 
-    private int think1;
+    private int thick1;
 
-    private int think2;
+    private int thick2;
 
     private int gasFlowRate;
 
     @Override
     public String toString() {
         return "Расход газа на шов " +
-                " s" + think1 +
-                "/S" + think2 +
+                " s" + thick1 +
+                "/S" + thick2 +
                 " = " + gasFlowRate + " баллонов";
     }
 }

@@ -14,16 +14,29 @@ public class SeamServiceImpl implements SeamService {
     private final SeamRepository seamRepository;
     private final DtoFactory dtoFactory;
 
-    public SeamDTO addSeamToDB(SeamsGOSTs gost, SeamsNumber seamsNumber, int think) {
+    private int positionСoefficient = 0;
+
+    //******************************************************************************************************
+    public SeamDTO addSeamToDB(SeamsGOSTs gost, SeamsNumber seamsNumber, int thick) {
         WeldingSeam weldingSeam = new WeldingSeam(gost, seamsNumber);
         return dtoFactory.fromWeldingSeamToSeamDTO(seamRepository.save(weldingSeam));
     }
-
-    public int calculateFlowRate (int detailsThink) {
-        int seamCrossSectionalAreaButtWeld =
+    //******************************************************************************************************
+    //добавить каскадное удаление расходов материалов
+    public void deleteSeamFromDB(SeamsGOSTs gost, SeamsNumber seamsNumber) {
+        WeldingSeam weldingSeam = new WeldingSeam(gost, seamsNumber;
+        seamRepository.delete(weldingSeam);
     }
 
-    public int calculateSeamCrossSectionalArea (int detailsThink){
+    //******************************************************************************************************
+// рассчёт расхода материалов на стыковой шов
+    public int calculateFlowRate(int detailsThick) {
+        int seamCrossSectionalAreaButtWeld =
+    }
+    
+    //******************************************************************************************************
+    // рассчёт поперечного сечения шва
+    public int calculateSeamCrossSectionalArea(int detailsThick) {
 
     }
 

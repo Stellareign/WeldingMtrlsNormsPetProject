@@ -18,17 +18,17 @@ public class FluxFlowRate {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private int think1;
+    private int thick1;
 
-    private int think2;
+    private int thick2;
 
     private int fluxFlowRate;
 
     @Override
     public String toString() {
         return "Расход флюса на шов " +
-                " s" + think1 +
-                "/S" + think2 +
+                " s" + thick1 +
+                "/S" + thick2 +
                 " = " + fluxFlowRate + "kg";
     }
 }

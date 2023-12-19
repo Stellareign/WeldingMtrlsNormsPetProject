@@ -19,10 +19,10 @@ public class MetalFlowRate {
     private String seamName;
 
     @Column(name = "толщина_1,_мм", nullable = false)
-    private int think1;
+    private int thick1;
 
     @Column(name = "толщина_2,_мм", nullable = false)
-    private int think2;
+    private int thick2;
 
     @Column(name = "Расход,_кг/м", nullable = false)
     private int metalFlowRate;
@@ -30,8 +30,8 @@ public class MetalFlowRate {
     @Override
     public String toString() {
         return "Расход св. проволоки на шов " +
-                " s" + think1 +
-                "/S" + think2 +
+                " s" + thick1 +
+                "/S" + thick2 +
                 " = " + metalFlowRate + "kg";
     }
 
